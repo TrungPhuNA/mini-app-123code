@@ -19,7 +19,7 @@ const ContactCTA = () => {
   const handleCall = async () => {
     try {
       await openPhone({
-        phoneNumber: "0900000000", // Thay bằng số điện thoại của bạn
+        phoneNumber: "0986420994", // Số điện thoại liên hệ
       });
     } catch (error) {
       console.error(error);
