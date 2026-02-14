@@ -5,39 +5,39 @@ import { Layout, Smartphone, Database, GraduationCap, Monitor, Blocks } from 'lu
 const services = [
     {
         icon: <Layout className="text-blue-500" />,
-        title: "Website Development",
-        desc: "React, Next.js, Vue, WordPress...",
+        title: "Thiết Kế Web Trọn Gói",
+        desc: "Chuẩn SEO, giao diện đẹp, tương thích mọi thiết bị.",
     },
     {
         icon: <Smartphone className="text-purple-500" />,
-        title: "Mobile App",
-        desc: "React Native, Flutter, Zalo Mini App.",
+        title: "App Di Động Đa Nền Tảng",
+        desc: "Xây dựng ứng dụng iOS & Android mượt mà, chuyên nghiệp.",
     },
     {
         icon: <GraduationCap className="text-orange-500" />,
-        title: "Làm Đồ Án",
-        desc: "CNTT, Điện tử viễn thông, Hệ thống nhúng.",
+        title: "Đồ Án CNTT Chất Lượng",
+        desc: "Cam kết sạch code, hướng dẫn chạy và giải thích chi tiết.",
     },
     {
         icon: <Database className="text-green-500" />,
-        title: "Database Design",
-        desc: "MySQL, PostgreSQL, MongoDB, NoSQL.",
+        title: "Tối Ưu & Bảo Mật DB",
+        desc: "Xử lý dữ liệu lớn, bảo mật thông tin tuyệt đối.",
     },
     {
         icon: <Blocks className="text-red-500" />,
-        title: "Game Development",
-        desc: "Unity, Cocos Creator, Phaser JS.",
+        title: "Phát Triển Game 2D/3D",
+        desc: "Hiện thực hóa ý tưởng game với Unity, Cocos.",
     },
     {
         icon: <Monitor className="text-indigo-500" />,
-        title: "Desktop App",
-        desc: "Electron, Java Swing, C# (.NET).",
+        title: "Phần Mềm Quản Lý",
+        desc: "Giải pháp chuyển đổi số cho doanh nghiệp nhỏ.",
     },
 ];
 
 const Services = () => {
     return (
-        <Box className="bg-white py-12 px-4 rounded-t-3xl -mt-8 relative z-10 shadow-2xl">
+        <Box id="services" className="bg-white py-12 px-4 rounded-t-3xl -mt-8 relative z-10 shadow-2xl">
             <Box className="text-center mb-10">
                 <Text size="large" className="font-bold text-gray-900 mb-2">Dịch Vụ Của Chúng Tôi</Text>
                 <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>

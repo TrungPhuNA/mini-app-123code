@@ -4,8 +4,8 @@ import { App, ZMPRouter, AnimationRoutes, SnackbarProvider } from 'zmp-ui';
 import { Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import HomePage from './pages/index';
+import 'zmp-ui/zaui.css';
 import './css/app.css';
-import 'zmp-ui/zmp-ui.css';
 
 const SnackbarProviderAny = SnackbarProvider as any;
 

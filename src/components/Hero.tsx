@@ -1,9 +1,16 @@
 import React from 'react';
 import { Box, Button, Text } from 'zmp-ui';
 import { motion } from 'framer-motion';
-import { Code2, ChevronRight, Rocket } from 'lucide-react';
+import { Code2, Rocket } from 'lucide-react';
 
 const Hero = () => {
+    const scrollToServices = () => {
+        const element = document.getElementById('services');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <Box className="relative overflow-hidden bg-gradient-to-br from-primary to-blue-700 pt-10 pb-20 px-4">
             <motion.div
@@ -23,26 +30,19 @@ const Hero = () => {
                     Biến ý tưởng thành <span className="text-secondary">Sản phẩm hoàn hảo</span>
                 </Text>
 
-                <Text className="text-blue-100 mb-8 max-w-xs mx-auto text-sm">
-                    Nhận code thuê, làm đồ án, xây dựng Website & Mobile App chất lượng cao, bàn giao đúng hạn.
+                <Text className="text-blue-100 mb-8 max-w-xs mx-auto text-sm leading-relaxed">
+                    Đội ngũ dev kinh nghiệm, cam kết **không copy**, giải thích code 1-1, bàn giao đúng deadline. Uy tín làm nên thương hiệu!
                 </Text>
 
-                <Box className="flex flex-col space-y-3 px-4">
+                <Box className="px-4">
                     <Button
                         fullWidth
                         variant="secondary"
                         className="h-12 rounded-xl font-bold shadow-lg"
                         prefixIcon={<Code2 size={20} />}
+                        onClick={scrollToServices}
                     >
                         Xem Dịch Vụ
-                    </Button>
-                    <Button
-                        fullWidth
-                        variant="tertiary"
-                        className="h-12 rounded-xl text-white border border-white/30"
-                        suffixIcon={<ChevronRight size={20} />}
-                    >
-                        Liên Hệ Ngay
                     </Button>
                 </Box>
             </motion.div>

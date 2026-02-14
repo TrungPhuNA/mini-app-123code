@@ -4,15 +4,21 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
     {
-        name: "Nguyễn Văn A",
-        role: "Sinh viên ĐHBK",
-        content: "Dịch vụ rất uy tín, bàn giao đồ án đúng hạn và giải thích code cực kỳ chi tiết. Rất hài lòng!",
+        name: "Minh Quân",
+        role: "Sinh viên năm cuối HUBT",
+        content: "Nhờ có team mà mình bảo vệ đồ án đạt loại Xuất sắc. Code cực sạch, comment chi tiết, lúc hỏi gì cũng được giải thích tận tình. Rất uy tín!",
         stars: 5,
     },
     {
-        name: "Trần Thị B",
-        role: "Chủ shop thời trang",
-        content: "Website mình được hoàn thiện rất nhanh, giao diện đẹp và mượt mà trên điện thoại.",
+        name: "Thu Trang",
+        role: "Chủ thương hiệu mỹ phẩm",
+        content: "Web bán hàng làm rất nhanh, đúng ý mình. Giao diện sang trọng mà giá lại rất hợp lý so với thị trường.",
+        stars: 5,
+    },
+    {
+        name: "Hoàng Long",
+        role: "Sinh viên Bách Khoa",
+        content: "Đồ án hệ nhúng tưởng khó mà team xử lý ngọt xớt. Bàn giao đúng deadline, hỗ trợ cài đặt từ A-Z luôn.",
         stars: 5,
     },
 ];
