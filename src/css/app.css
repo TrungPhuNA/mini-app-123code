@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --zmp-primary-color: #006AF5;
+  --zmp-primary-color: #006af5;
 }
 
 body,
@@ -17,7 +17,18 @@ html,
 }
 
 body {
-  font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    roboto,
+    oxygen,
+    ubuntu,
+    cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f7fa;

@@ -1,23 +1,23 @@
-import React from 'react';
-import { Page, Box } from 'zmp-ui';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Portfolio from '../components/Portfolio';
-import Testimonials from '../components/Testimonials';
-import ContactCTA from '../components/ContactCTA';
+import React from "react";
+import { Page, Box } from "zmp-ui";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Portfolio from "../components/Portfolio";
+import Testimonials from "../components/Testimonials";
+import ContactCTA from "../components/ContactCTA";
 
 const HomePage = () => {
-    return (
-        <Page className="relative bg-white">
-            <Box className="flex flex-col pb-24">
-                <Hero />
-                <Services />
-                <Portfolio />
-                <Testimonials />
-            </Box>
-            <ContactCTA />
-        </Page>
-    );
+  return (
+    <Page className="relative bg-white">
+      <Box className="flex flex-col pb-24">
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Testimonials />
+      </Box>
+      <ContactCTA />
+    </Page>
+  );
 };
 
 export default HomePage;
