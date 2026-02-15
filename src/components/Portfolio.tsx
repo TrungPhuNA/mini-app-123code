@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Text } from "zmp-ui";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -35,37 +36,56 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <Box className="bg-gray-50 py-12 px-4 shadow-inner">
-      <Box className="mb-8">
-        <Text size="large" className="font-bold text-gray-900 mb-1">
-          Dự Án Tiêu Biểu
-        </Text>
-        <div className="w-12 h-1 bg-primary rounded-full"></div>
+    <Box className="bg-gray-50/50 py-16 px-6">
+      <Box className="mb-10">
+        <Box className="flex items-center gap-3 mb-3">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Briefcase className="text-primary" size={20} />
+          </div>
+          <Text size="large" className="font-bold text-gray-900 tracking-tight">
+            Dự Án Tiêu Biểu
+          </Text>
+        </Box>
+        <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-orange-400 rounded-full mb-6"></div>
       </Box>
 
-      <Box className="space-y-6">
+      <Box className="space-y-8">
         {projects.map((project, index) => (
-          <Box
+          <motion.div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-white rounded-[32px] overflow-hidden shadow-xl shadow-gray-200/40 border border-gray-100 group transition-all duration-500"
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
-            <Box className="p-5 w-full">
-              <Text className="text-primary text-[10px] font-bold uppercase mb-1">
+            <div className="relative overflow-hidden h-52">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
+                  <Text className="text-white text-[10px] font-bold uppercase flex items-center">
+                    Xem chi tiết <ExternalLink size={12} className="ml-1.5" />
+                  </Text>
+                </div>
+              </div>
+            </div>
+
+            <Box className="p-6">
+              <Text className="text-primary text-[10px] font-extrabold uppercase tracking-widest mb-2 px-3 py-1 bg-primary/5 rounded-full inline-block">
                 {project.category}
               </Text>
-              <Text className="font-bold text-gray-900 text-lg leading-tight mb-2">
+              <Text className="font-bold text-gray-900 text-xl leading-tight mb-3">
                 {project.title}
               </Text>
-              <Text className="text-gray-600 text-sm italic">
+              <Text className="text-gray-500 text-sm leading-relaxed">
                 {project.desc}
               </Text>
             </Box>
-          </Box>
+          </motion.div>
         ))}
       </Box>
     </Box>

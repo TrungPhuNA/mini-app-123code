@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Text } from "zmp-ui";
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, MessageSquare } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -28,22 +29,33 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <Box className="bg-white py-12 px-4 mb-24">
-      <Box className="text-center mb-10">
-        <Text size="large" className="font-bold text-gray-900 mb-2">
-          Khách Hàng Nói Gì
-        </Text>
-        <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+    <Box className="bg-white py-16 px-6 mb-24">
+      <Box className="mb-10">
+        <Box className="flex items-center gap-3 mb-3">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <MessageSquare className="text-primary" size={20} />
+          </div>
+          <Text size="large" className="font-bold text-gray-900 tracking-tight">
+            Khách Hàng Nói Gì
+          </Text>
+        </Box>
+        <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-green-400 rounded-full mb-6"></div>
       </Box>
 
       <Box className="space-y-6">
         {testimonials.map((item, index) => (
-          <Box key={index} className="p-6 bg-gray-50 rounded-2xl relative">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="p-8 bg-gray-50/50 rounded-[32px] border border-gray-100 relative overflow-hidden group hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300"
+          >
             <Quote
-              className="absolute top-4 right-4 text-primary/10"
-              size={40}
+              className="absolute -top-2 -right-2 text-primary/5 group-hover:text-primary/10 transition-colors"
+              size={120}
             />
-            <Box className="flex mb-2">
+            <Box className="flex mb-4">
               {[...Array(item.stars)].map((_, i) => (
                 <Star
                   key={i}
@@ -52,16 +64,21 @@ const Testimonials = () => {
                 />
               ))}
             </Box>
-            <Text className="text-gray-700 italic mb-4 text-sm leading-relaxed">
+            <Text className="text-gray-700 italic mb-6 text-sm leading-relaxed relative z-10">
               "{item.content}"
             </Text>
-            <Box>
-              <Text className="font-bold text-gray-900 text-sm">
-                {item.name}
-              </Text>
-              <Text className="text-gray-400 text-xs">{item.role}</Text>
+            <Box className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-xs">
+                {item.name.charAt(0)}
+              </div>
+              <Box>
+                <Text className="font-extrabold text-gray-900 text-sm">
+                  {item.name}
+                </Text>
+                <Text className="text-gray-400 text-[11px] font-medium">{item.role}</Text>
+              </Box>
             </Box>
-          </Box>
+          </motion.div>
         ))}
       </Box>
     </Box>

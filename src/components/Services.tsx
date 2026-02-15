@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Text } from "zmp-ui";
+import { motion } from "framer-motion";
 import {
   Layout,
   Smartphone,
@@ -46,31 +47,38 @@ const Services = () => {
   return (
     <Box
       id="services"
-      className="bg-white py-12 px-4 rounded-t-3xl -mt-8 relative z-10 shadow-2xl"
+      className="bg-white py-16 px-6 rounded-t-[40px] -mt-10 relative z-20 shadow-[0_-20px_40px_rgba(0,0,0,0.03)]"
     >
-      <Box className="text-center mb-10">
-        <Text size="large" className="font-bold text-gray-900 mb-2">
-          Dịch Vụ Của Chúng Tôi
-        </Text>
-        <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+      <Box className="mb-12">
+        <Box className="flex items-center gap-3 mb-3">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Blocks className="text-primary" size={20} />
+          </div>
+          <Text size="large" className="font-bold text-gray-900 tracking-tight">
+            Dịch Vụ Chuyên Biệt
+          </Text>
+        </Box>
+        <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-blue-400 rounded-full mb-6"></div>
       </Box>
 
-      <Box className="grid grid-cols-2 gap-4">
+      <Box className="grid grid-cols-2 gap-5">
         {services.map((item, index) => (
-          <Box
+          <motion.div
             key={index}
-            className="p-4 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+            whileHover={{ y: -8, shadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="p-6 bg-gray-50/50 rounded-[32px] border border-gray-100 flex flex-col items-center text-center group transition-all duration-300"
           >
-            <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-3">
+            <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-gray-50">
               {item.icon}
             </div>
-            <Text className="font-bold text-gray-800 text-sm mb-1">
+            <Text className="font-extrabold text-gray-800 text-sm mb-2 leading-tight">
               {item.title}
             </Text>
-            <Text className="text-gray-500 text-[10px] leading-tight">
+            <Text className="text-gray-500 text-[11px] leading-relaxed">
               {item.desc}
             </Text>
-          </Box>
+          </motion.div>
         ))}
       </Box>
     </Box>
